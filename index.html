@@ -140,6 +140,17 @@ button { cursor: pointer; }
   .shutter-row { padding-bottom: 58px; }
   .intro { padding-bottom: 64px; }
   .calib-box { bottom: 62px; }
+  /* Keep camera controls from colliding on narrow screens */
+  .stage-bar { flex-wrap: wrap; align-items: flex-start; padding: 10px 12px; gap: 8px; }
+  .stage-bar .pill { padding: 7px 12px; font-size: 13px; white-space: nowrap; }
+  .stage-bar .status { max-width: 100%; }
+  .shutter-row { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px; padding: 16px 12px 58px; }
+  .shutter-row .pill { padding: 7px 12px; font-size: 13px; white-space: nowrap; text-align: center; justify-self: stretch; }
+  .shutter-row #toggle-adjust { grid-column: 1; }
+  .shutter-row .shutter { grid-column: 2; }
+  .shutter-row #switch, .shutter-row #new-photo { grid-column: 3; }
+  .shutter { width: 66px; height: 66px; }
+  .shutter span { width: 50px; height: 50px; }
 }
 .flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; transition: opacity .18s; }
 .flash.on { opacity: .7; transition: none; }
