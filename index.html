@@ -152,6 +152,16 @@ button { cursor: pointer; }
   .shutter { width: 66px; height: 66px; }
   .shutter span { width: 50px; height: 50px; }
 }
+/* Mobile: controls sit above and below the camera preview instead of overlapping it */
+@media (max-width: 900px) {
+  .stage { display: flex; flex-direction: column; }
+  .stage canvas { flex: 1 1 0; min-height: 0; height: auto; }
+  .stage-bar { position: relative; inset: auto; z-index: 3; order: -1; flex: 0 0 auto; background: var(--stage); }
+  .calib-box { position: relative; inset: auto; z-index: 3; transform: none; order: 1; flex: 0 0 auto; width: auto; margin: 8px 12px 0; }
+  .shutter-row { position: relative; inset: auto; z-index: 3; order: 2; flex: 0 0 auto; padding: 10px 12px 6px; background: var(--stage); }
+  .back-btn { position: relative; inset: auto; z-index: 3; order: 3; flex: 0 0 auto; align-self: center; margin: 4px 0 10px; }
+  .intro { padding-bottom: 24px; }
+}
 .flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; transition: opacity .18s; }
 .flash.on { opacity: .7; transition: none; }
 .panel { background: var(--surface); color: var(--text); overflow-y: auto; border-left: 1px solid color-mix(in srgb, var(--gold) 18%, transparent); }
